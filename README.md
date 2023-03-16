@@ -140,6 +140,23 @@
 
 ##### - Yeni Hesap Açma :
 
+###### Bu bölümde user@ komutuyla yeni bir kullanıcı yaratma, o kullanıcı için bir ev dizini oluşturma ve varsayılan kabuk tanımlama gibi özellikleri inceleyeceğiz. sudo useradd ali -m -d /home/ayşe -s /bin/bash komutunu yazıyoruzç Ardından sudo passwd ali diyoruz ve Ali'ye yeni bir şifre tanımlayabiliyoruz. su ali yazıp şifresini girelim. cd /home yazıp ls -l dediğimde klasörlere girip dolaşabilme yetkilerini görüyorum. Diğer kullanıcıların dosyalarının içerisinde gezinebiliyorum. cd defne11 yazıp ls dediğimde mesela defne11'in dosyalarına ulaştım. Bunu önlemek lazım :
+
+![ali](https://user-images.githubusercontent.com/97543719/225645936-a5c95357-486a-4c6a-831e-f697c42dc754.png)
+
+###### cd.. yapıp iki kere exit yapalım. sudo chmod 700* komutunu yazalım ve bu sefer ls -l dediğimizde klasör yetkilendirmeleri daha kontrollü oldu. Önceki işlemleri tekrarladığında kafana göre başkasının dosyalarında gezemediğini göreceksin. Bu ayarlamaları konfigurasyon dosyası üzerinden yapmak mümkündür. sudo nano /etc/login.defs dediğimiz bir dosya var. Onu açıyoruz. En altta UMASK denen bir değer değer var. O değeri 077 yapıp çıkıyoruz. Bu sayede artık yeni bir kullanıcı oluşturduğumuzda otomatik olarak kilitlenmiş olacaktır.
+
+![umask](https://user-images.githubusercontent.com/97543719/225648515-1f411617-52b4-488b-b122-4ee4863a829c.png)
+
+##### - Hesap Geçerlilik Sürelerinin Yönetimi :
+
+
+
+
+
+
+
+
 
 
 
