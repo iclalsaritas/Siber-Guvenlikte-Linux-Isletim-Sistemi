@@ -303,6 +303,43 @@
 
 ![ö](https://user-images.githubusercontent.com/97543719/225712345-604c290b-2de5-4c1d-8783-916153ce3694.PNG)
 
+###### Hep duymuşuzdur. Güvenli bir sunucu kurmak istiyorsan pin trafiğini kapatman lazım diye. Kapalı olunca hackerler sizi göremez vs. İnanın hackerlar sizi görür, nmap komutu kadar kolay bir şey. Yeter ki herhangi bir portunuz açık olsun. clear diyelim bir.
+###### iptables -A INPUT -m conntrack -p icmp --icmp  -type3 --ctstate NEW, ESTABLISHED, RELATED -j ACCEPT diyoruz. Dikkat ederseniz icmp tür 3 olan trafiğe izin verdim. 3 nedir? Ulaşılamaz mesajlardır. Bir trafiğe gerçekten bir sıkıntı sebebiyle ulaşılamıyorsa benim bunu engellemem iyi bir şey değil, benim bunu fark etmem gerekiyor. Aynı şekilde 3'ün yanında 11 numaralı trafiğe de müsade edelim. Bu da zaman aşımına uğrayan paketleri tanımlıyor. 12'yi de tanımlayalım. 12, bozuk başlık değerine sahip olan icmp türlerini tanımlıyor. Biz bu üçüne müsade edelim. Drop paketi tanımlayalım :
+
+###### iptables -P DROP diyelim. Drop, paketi tamamen kes veya baika bir şey yapma kaale bile alma anlamına gelir. Bu yaptığımız ayarlamalar restart ile uçabilir. Bunların uçmaması için bir paketimiz var . apt install iptables-persistent .
+###### Kuralları sıfırlamak istersek :
+
+![ş](https://user-images.githubusercontent.com/97543719/225725365-6da7eea3-cd93-446a-bf9c-6488a9a4a3a1.PNG)
+
+###### Bunları yaptıktan sonra iptables -L dediğimizde en başa döndüğümüzü görmüş oluruz :
+
+![t](https://user-images.githubusercontent.com/97543719/225725669-d67493e1-7e33-499f-a809-445e44ef7262.PNG)
+
+##### - SSH Servis Kurulumu :
+
+###### Bu derste, ssh servisini kullanıcı adı ve şifre girmeden oluşturduğumuz açık ve özel anahtarları kullanarak nasıl doğrudan bağlanabileceğimizi göreceğiz. Senaryomuzda bir kalilinux var diğer tarafta da ubuntumuz var. Aslında bu aynı zamanda hacking yöntemlerinde uzaktan sistemi ele geçirmede birçok zaafiyetli makine çözerken de kullanabileceğimiz bir senaryodan ibaret. Hem güvenlik açısından hem de pentest açısından bu senaryoyu inceleyebiliriz. öncelikle, ssh-keygen diye bir komutumuz var. y diyoruz ve ls diyoruz.
+
+###### cat id_rsa.pub dediğimizde açık anahtarımız ortaya çıkıyor. Bunu kopyalıyoruz. Ubuntuyu açıyoruz. echo "-----" >> authorized_keys adlı bir dosyayı kaydediyoruz. ls dediğimizde dosyayı görüyoruz. Ubuntu artık bu anahtarı karşılayacak özel anahtardan gelen herhangi bir isteği doğrudan kabul edecek, amacımız bu.
+
+###### chmod 600 id_rsa yazıp enter dediğimizde bizden kullanıcı adı ve şifre istemedi. ssh -i id_rsa defne11@ubuntuipsi doğrudan hedef sisteme bağlanmamızı sağladı. Bunun avantajı ne peki? Kullanıcı adı ve şifre girmek bazen risklidir.
+
+##### - SSH Parolasız Erişim Yöntemi :
+
+###### Bu kısımda ssh servisini ayağa kaldıracağız. Bu servis bilgisayarımızda mevcut mu bunu anlamanın yöntemi :
+
+![ç](https://user-images.githubusercontent.com/97543719/225728142-796f12ed-76dd-4910-9ec0-bc9570c5c0a7.PNG)
+
+###### diyorum ve 22 numaralı portta herhangi bir dinleyici bir sınır olmadığını görüyorum. Dolayısıyla servisin çalışmadığı anlamına geliyor. Neler varmış bir bakalım.
+###### 53 ve bazı diğer protokoller açıkmış. Anlamanın bir diğer yöntemi de systemctl status ssh ile servislere bakmaktır, aklınızda bulunsun. apt install openssh-server ile ssh ayağa kaldıran paketi indirelim. ssh servisinin sıkılaştırılması anlamında yapılabilecek birçokk şey var. Örneğin, root hesabının uzaktan erişimi kısıtlanabilir, kullanıcı adı şifre yerine özel veya açık anahtarla bağlanmak gibi konfigurasyonlar yapılabilir. Bunun dışında 22 numaralı port yerine başka bir porttan çalışması sağlanarak da sistemim daha kolay erişilmesini engelleyebilir. Basit bir nmap taraması bile bunu ortaya çıkarabilir çünkü. openssh servisinin  sunucumuzda her zaman güncel olması önemlidir. Çünkü openssh çok çok çok eski olursa, ona yönelik zafiyetler de var ve bu bizim pc mizin sunucumuzun güvenliği açısından da riskli bir durum teşkil edebilir. Şimdi bakalım,
+
+###### systemctl enable ssh diyelim, sorun çıkarsa başına sudo koyun her zamanki gibi. Gördüğünüz gibi servisi ayağa kaldırmaya çalışıyoruz. Ekranımızı temizleyip systemctl status shh diyelim ve çalıştığını görelim. ifconfig yazıp ipmizi görelim. Başka bir pc ye geçelim.
+
+###### ssh troll@ipsi yazıp girdiğimizde troll hesabına erişmiş olduk. ssh servisini ayağa kaldrmak ve düzgün yönetmekbizim sistem yöneticiliği alanında hem elimiz ayağımız olacaktır ama aynı zamanda bunun güvenliği ve sıkılaştırmasına önem vermek gereklidir.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 
 
 
