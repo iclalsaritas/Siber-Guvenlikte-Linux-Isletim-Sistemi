@@ -178,7 +178,7 @@
 
 ![lol](https://user-images.githubusercontent.com/97543719/225662028-bea48d87-8c9e-427c-b99f-5c46c4bb6595.png)
 
-###### İnsanlar bazen parolalarını unutabiliyorlar. O yüzden 3 kez deneme hakkı az olabiliyor ama bir sözlük saldırısı yapılıyorsa mesela 60-200 gibi değer vererek hem saldırıyı tespit edebiliriz hem de hesap sahibini mağdur etmemiş oluruz. sudo pam_tally2 komutunu çalıştıralım. Burada giriş denemelerinin not düşüldüğünü görüyorum. Kilitli hesabı geri açmak isterseniz sudo usermod -U defne11 dersiniz ve açılır. -U = Unlock, -L = Lock anlamlarına gelir. Aynı şekilde sudo passwd -l defne11 derseniz kilitlenir, sudo passwd -u defne11 derseniz ise açarsınız. Bu da başka bir yöntemdir.
+###### İnsanlar bazen parolalarını unutabiliyorlar. O yüzden 3 kez deneme hakkı az olabiliyor ama bir sözlük saldırısı yapılıyorsa mesela 60-200 gibi değer vererek hem saldırıyı tespit edebiliriz hem de hesap sahibini mağdur etmemiş oluruz. sudo pam_tally2 komutunu çalıştıralım. Burada giriş denemelerinin not düşüldüğünü görüyorum. Kilitli hesabı geri açmak isterseniz sudo usermod -U defne11 dersiniz ve açılır. -U = Unlock, -L = Lock anlamlarına gelir. Aynı şekilde sudo passwd -l defne11 derseniz kilitlenir, sudo passwd -u defne11 derseniz açarsınız. Bu da başka bir yöntemdir.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
