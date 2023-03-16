@@ -166,6 +166,35 @@
 
 ##### - Kilitli Hesapların Yönetilmesi :
 
+###### Bu bölümde kullanıcı hesaplarını kilitleme özelliğini inceleyeceğiz. Eğer kullanıcı hesabına oturum açma anlamında bizim belirlediğimiz bir sayı üzerinde deneme gerçekleşiyorsa hesabın otomatik olarak kitlenmesini sağlayabiliriz. sudo gedit /etc/pam.d/common-auth isimli dosyayı açıyorum :
+
+![zzzzzzz](https://user-images.githubusercontent.com/97543719/225657608-193d0a33-fc88-4201-9016-b8f214f79d01.png)
+
+###### here are the per-package modules (the "primary" block) adlı yazının altına : 
+
+![Ekran görüntüsü 2023-03-16 180255](https://user-images.githubusercontent.com/97543719/225658935-cef04df8-1b17-4771-a18f-d5b5540c8a34.png)
+
+###### diye bir yazı ekliyorum. Kaydedip çıkıyoruz. Oturumu kapatıp tekrar girelim. Mesela defne11 diye bir kullanıcımız vardı. Onun üstünden örneğimizi uygulayalım. Rastgele 3 kez parola girelim ve hesabın kilitlendiğine şahit olalım :
+
+![lol](https://user-images.githubusercontent.com/97543719/225662028-bea48d87-8c9e-427c-b99f-5c46c4bb6595.png)
+
+###### İnsanlar bazen parolalarını unutabiliyorlar. O yüzden 3 kez deneme hakkı az olabiliyor ama bir sözlük saldırısı yapılıyorsa mesela 60-200 gibi değer vererek hem saldırıyı tespit edebiliriz hem de hesap sahibini mağdur etmemiş oluruz. sudo pam_tally2 komutunu çalıştıralım. Burada giriş denemelerinin not düşüldüğünü görüyorum. Kilitli hesabı geri açmak isterseniz sudo usermod -U defne11 dersiniz ve açılır. -U = Unlock, -L = Lock anlamlarına gelir. Aynı şekilde sudo passwd -l defne11 derseniz kilitlenir, sudo passwd -u defne11 derseniz ise açarsınız. Bu da başka bir yöntemdir.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#### 2) Dosya Yönetimi
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
