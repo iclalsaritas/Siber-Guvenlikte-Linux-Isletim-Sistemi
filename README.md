@@ -120,6 +120,17 @@
 
 ##### -Güçlü Parola Yönetimi :
 
+###### Sıra geldi güçlü parola yönetim politikasına. Bu konuya başlamadan önce bize yardımcı olacak bir paketi indireceğiz. Terminalinize sudo apt install libpam-pwdqudity yazın. Siber güvenlikte almamız gereken en önemli güvenlik önlemi güçlü parola politikasıdır. Bir hacker ya da bir pentester bize saldırmak istediğinde kullanacağı şey sözlük saldırısıdır. Paket indiğine göre :
+
+![aaaaaaaaaaa](https://user-images.githubusercontent.com/97543719/225638861-00aef348-5cb0-455e-85cb-84a578a03f81.png)
+
+###### sudo gedit /etc/security/pwquality.conf komutunu yazalım. Açıldığında göreceksiniz ki aslında bütün değerler gördüğünüz gibi kapalı durumda. Biz bunları açtıkça etkinleşmiş hale gelecek. Değerleri değiştirip çıkalım.
+
+![dosya](https://user-images.githubusercontent.com/97543719/225639841-88ed1bee-948a-4624-a30d-9dd5ab2a1f43.png)
+
+
+
+
 
 
 
