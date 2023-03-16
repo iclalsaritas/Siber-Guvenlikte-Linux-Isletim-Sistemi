@@ -114,8 +114,7 @@
 
 ###### gibi kısıtlı bir yetki verelim. su ahmet yazıp parolayı girelim. sudo more /etc/ssh/ssh_config diyelim. Burada özellikle dikkat edin. En alta !bash yazalım. Bakın root olduk : 
 
-![sagse](https://user-images.githubusercontent.com/97543719/225635009-80944722-b57e-441e-adff-f7f26782c2b3.png)
-![sfdg](https://user-images.githubusercontent.com/97543719/225635086-977462dc-5953-4a5c-a738-bda248359630.png)
+![bu kadar](https://user-images.githubusercontent.com/97543719/225636387-830e03fd-1744-4390-8d4d-55696ad75924.png)
 
 ###### Bu da shell escape ya da bash escape denilen bir saldırı yöntemidir. more gibi editörler kendi içlerinde bash komutlarını çalıştırmaya müsade etmekteler. Bu da hak saldırısı örneklerindendi.
 
