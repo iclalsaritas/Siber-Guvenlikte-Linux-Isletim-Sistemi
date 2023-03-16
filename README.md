@@ -184,6 +184,47 @@
 
 #### 2) Dosya Yönetimi
 
+##### - Dosya Sahiplikleri :
+
+###### Biz herhangi bir dosya oluşturduğumuzda sistem tarafından o dosyaya bir kullanıcı ve bir grup sahip olarak atanacaktır. Örneğin echo "yeni dosya" > yeni.txt diye bir dosya oluşturalım. ls -l dediğimizde bu dosyanın sahipliğini görebiliriz. Sahip kullanıcısı defne11 ve grubu defne11 :
+
+![lk](https://user-images.githubusercontent.com/97543719/225676690-576c9b50-756f-47a6-814f-e1aa1af03b55.PNG)
+
+###### Dosyanın sahipliğini değiştirmek istersek chown ahmet:ahmet yeni.txt komutunu yazarız. İşleme izin vermezse başına sudo yaz :
+
+![xcv](https://user-images.githubusercontent.com/97543719/225678111-75a50bba-1102-4ab3-9695-75bd4150097f.PNG)
+
+###### Eğer sahibini tekrar defne11 yapmak istersek chown defne11 yeni.txt komutunu yazmamız yeterli olur. Bu arada grubuna da defne11 demediğimiz için Ahmet olarak kalır. Grubunu da defne11 yapmak istersek defne11 'in başına : koymamız yeterli olacaktır.
+
+###### Bir de shell scripti hazırlayalım :
+
+![asdfg](https://user-images.githubusercontent.com/97543719/225679777-950a3e28-f2ee-4334-8bf4-724812342bf9.PNG)
+
+###### Bu dosyaların belli bir gruba ait olmasını istiyorsam :
+
+![kn](https://user-images.githubusercontent.com/97543719/225681025-f492b87f-1f30-42b5-8e62-fccce9203b1b.PNG)
+
+###### sudo chown :hacker -R lesson/ yazıp cd lesson komutunu uyguluyoruz ardından. ls -l yaptığınızda göreceksiniz ki iki dosyanın grubu da hackera dönüştü.
+
+###### Bildiğimiz üzere shell dosyası kabuk programlamada çalıştırılabilir komutlar demek. Hadi bi' çalıştıralım :
+###### ./echo.sh yazdım ama erişime izin vermedi. Peki neden? Çünkü sahibi olarak benim okuma ve yazma yetkim var ama çalıştırma yetkim yok. Bu yetkiyi şöyle ekleyebiliriz. chmod u+x echo.sh diyoruz. Bu sefer ./echo.sh yazarsanız çalıştığını göreceksiniz. chmod g+t echo.sh deseydik, gruba da çalıştırma yetkisi vermiş olacaktık. chmod o+x echo.sh deseydik, others yani diğerlerine de çalıştırma yetkisi vermiş olacaktık. 
+
+###### Bir dosya ilk oluşturulduğunda dikkat ederseniz -rw-r--r-r yetkileri verildiğini görürüz. Bunun aynı zamanda sayısal karşılığı vardır :
+###### r = 4, w = 2, x = 1, r+w+x = 7 . Bunların toplamı olarak bizler değer atayabiliyoruz. chmod 777, chmod 700 gibi!
+
+![ASASFD](https://user-images.githubusercontent.com/97543719/225684459-f11f25ea-b2c3-4c8f-87f7-cf48da244adc.PNG)
+
+###### Sayısal ifadelerini stat -c '%n %a' * komutunu kullanarak görmüş olduk. 
+
+
+
+
+
+
+
+
+
+
 
 
 
