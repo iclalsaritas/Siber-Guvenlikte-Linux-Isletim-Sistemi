@@ -273,6 +273,17 @@
 
 ![a](https://user-images.githubusercontent.com/97543719/225704188-965c906c-065d-4c9f-ba48-1e73945fa438.PNG)
 
+###### Özel ve açık anahtar için de yapmak istersek :
+
+![d](https://user-images.githubusercontent.com/97543719/225705664-d8d7a88e-97a1-4e85-99ae-8070071bf0c7.PNG)
+
+##### yes dedikten ve işlem tamamlandıktan sonra anahtarlarımı gördüm. cd .gnups/ yazıp ls diyorum. gpgp --export -a -o defne11_public_key.txt dedikten sonra ls yapalım. cat defne11_public_key.txt yazdığımda açık anahtarım gelmiş olacaktır.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#### 4) Erişim Denetimi
+
+
 
 
 
