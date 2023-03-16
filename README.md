@@ -150,6 +150,27 @@
 
 ##### - Hesap Geçerlilik Sürelerinin Yönetimi :
 
+###### Bu kısmı yeni bir kullanıcı üzerinden irdeleyelim . sudo useradd mehmet - m -d /home/mehmet -s /bin/bash -e 2023-06-30 koumutunu yazıyoruz:
+
+![memet](https://user-images.githubusercontent.com/97543719/225653576-9f6d6452-106d-4318-b978-814ebec07775.png)
+
+###### Kullanıcının hesabı kullanma süresi bu tarihte bitecek. Ama belki de bu adam işten daha erken ayrılacak ve ben bunun süresini kısayım biraz dersek eğer, sudo usermod mehmet -e 2023-04-28 diyerek tarihi değiştirmiş oluyorum. Mehmet'e parola da ayarlayalım. sudo passwd mehmet. sudo passwd -e mehmet komutunu yazdığımızda ise Mehmet'in parolasının son kullanma tarihini değiştirmiş oluyoruz:
+
+![mmmm](https://user-images.githubusercontent.com/97543719/225654891-94c0d57b-c34c-4bc1-a67c-d5c63b70b965.png)
+
+###### su mehmet dediğimizde ve parolayı girdiğimizde, parolanızı en kısa sürede değiştirmeniz gerekiyor! uyarısı gelecektir :
+
+![eeeeeeeeee](https://user-images.githubusercontent.com/97543719/225655440-e7ef2c8a-dc48-409f-9299-9ab5bdbde21b.png)
+
+###### Geçerli paroladan sonra yeni parolamızı oluşturunca kullanıcımıza yeni hesabını güven içerisinde teslim etmiş oluyoruz.
+
+##### - Kilitli Hesapların Yönetilmesi :
+
+
+
+
+
+
 
 
 
