@@ -1,1 +1,5 @@
+##### -Sudo Komutunun Kullanılması : 
 
+###### Komutları yönetici yetkisiyle çalıştırmamıza olanak sağlayan komuttur. Peki neden böyle bir komuta ihtiyaç duyuyoruz? Bütün komutları root olarak yönetmek pek de
+###### güvenli değildir. Oldukça tehlikelidir. Farkında olmadan çok güçlü bir komutu çalıştırıp sisteme zarar verebiliriz ya da daha da önemlisi farkında olmadan zararlı
+###### bir dosyayı çalıştırıp sistemin saldırgan tarafından ele geçirilmesine sebep olabiliriz. 
