@@ -84,6 +84,35 @@
 
 ![visudo](https://user-images.githubusercontent.com/97543719/225619564-06467240-5709-4a03-8b1a-6ae4b0517512.png)
 
+###### Birkaç değişiklik yapacağız : 
+
+![viii](https://user-images.githubusercontent.com/97543719/225620411-e5f7cf95-3d5b-4d45-8bad-4a14594974a2.PNG)
+
+###### Ahmet ALL = (ALL)  ALL yazıp kaydedelim ve çıkalım. Bunu yaptıktan sonra su ahmet yazıp parolasını girip ardından sudo -i dediğimizde artık önümüze engeller çıkmayacak ve root olarak devam edebileceğiz. 
+
+![DMİN](https://user-images.githubusercontent.com/97543719/225621328-ff2ae040-f853-4b2f-92c5-95be868feb03.PNG)
+
+###### Bazı durumlarda, bir kullanıcının belli başlı komutları çalıştırmasını istiyor olabilirim. Burada kendi ubuntumuzda bir senaryo gerçekleştiriyor olsak da, iş hayatında büyük bir sistemi yönetiyor olabiliriz. Bizim yardımcımız olabilir ve onun sadece mesela disklere ulaşmasını istiyor olabilirim. Senaryomuzda Ahmet benim yardımcm olsun ve onun nelere yetkisinin olduğunu düzenlemek için tekrar sudo visudo yazalım ve en alta gidelim : 
+
+![stat](https://user-images.githubusercontent.com/97543719/225622881-d30e0594-0896-476d-b48a-0ce90737dcc9.png)
+
+###### Kaydedip çıkalım. su ahmet diyelim ve parolasını girelim. sudo -l dediğimde bana Ahmet'in nelere yetkisinin olduğunu gösteriyor. sudo komutunuzla bu yetkileri test edebilirsiniz.
+
+![komu](https://user-images.githubusercontent.com/97543719/225624602-8c260fc4-fe51-436e-9341-df73ea1b132d.png)
+
+###### Peki, siber güvenlik anlamında bu konuyu irdeleyecek olursak sizce ahmet ALL = (ALL) /bin/bash doğru bir hareket mi olurdu? Hayır. Çünkü  kabuğu root yetkisiyle açtıktan sonra zaten istediğim komutu çalıştırabilirim. Bu konuyla alakalı yeri gelmişken 2 tane hak yükseltme saldırısı deneyelim mi ?
+
+###### ahmet ALL = (ALL) /home/ahmet/callme.sh iznini verelim bakalım : 
+
+
+
+
+
+
+
+
+
+
 
 
 
