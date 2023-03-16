@@ -40,5 +40,5 @@
 
 ###### Bu kişiye parola oluşturmak istersek sudo passwd komutunu kullanırız : 
 
-
+[alt text](http://url/to/img.png)
 
