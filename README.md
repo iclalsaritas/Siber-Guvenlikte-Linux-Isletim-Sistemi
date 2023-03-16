@@ -1,4 +1,4 @@
-###### Herkese merhaba. Siber Güvenlikte Linux İşletim Sistemi başlığı altında Linux güvenliği ve sıkılaştırması ile ilgileneceğiz. Linux güvenliğine temel atmaya karar verdiysen doğru yerdesin. Ubuntu üzerinden anlatımımı gerçekleştireceğim. İlerlememiz şu başlıklar altında olacaktır : 
+###### Herkese merhaba. Siber Güvenlikte Linux İşletim Sistemi başlığı altında Linux güvenliği ve sıkılaştırması ile ilgileneceğiz. Linux güvenliğine temel atmaya karar verdiysen doğru yerdesin. Ubuntu üzerinden anlatımımı gerçekleştireceğim. Halihazırda Linux komutlarını bildiğinizi varsayarak anlatımımı yapacağım. İlerlememiz şu başlıklar altında olacaktır : 
 
 #### 1) Kullanıcı Hesap Yönetimi
 
@@ -100,7 +100,37 @@
 
 ###### Peki, siber güvenlik anlamında bu konuyu irdeleyecek olursak sizce ahmet ALL = (ALL) /bin/bash doğru bir hareket mi olurdu? Hayır. Çünkü  kabuğu root yetkisiyle açtıktan sonra zaten istediğim komutu çalıştırabilirim. Bu konuyla alakalı yeri gelmişken 2 tane hak yükseltme saldırısı deneyelim mi ?
 
-###### ahmet ALL = (ALL) /home/ahmet/callme.sh iznini verelim bakalım : 
+###### ahmet ALL = (ALL) /home/ahmet/callme.sh iznini verelim ve ardından nano callme.sh diyelim ve şunları yazıp çıkalım :
+
+![safs](https://user-images.githubusercontent.com/97543719/225629863-ff422f22-7fcd-479c-95c5-8eadcd462e8c.png)
+
+###### chmod +x callme.sh diyerek yazma yetkisini de verelim. ./callme.sh :
+
+![hak](https://user-images.githubusercontent.com/97543719/225631166-a1466d1d-5e1a-49d5-a75d-cfa63c705ada.png)
+
+###### Gördüğünüz üzere hak yükseltme saldırısı başarılı oldu. Ahmet üzerinden komutu çalıştırabildim. Bir başka senaryoyu inceleyelim :
+
+![adsjlk](https://user-images.githubusercontent.com/97543719/225632534-fa1ef20c-838c-42c9-8bd6-358fb3d9bf2c.png)
+
+###### gibi kısıtlı bir yetki verelim. su ahmet yazıp parolayı girelim. sudo more /etc/ssh/ssh_config diyelim. Burada özellikle dikkat edin. En alta !bash yazalım. Bakın root olduk : 
+
+![sagse](https://user-images.githubusercontent.com/97543719/225635009-80944722-b57e-441e-adff-f7f26782c2b3.png)
+![sfdg](https://user-images.githubusercontent.com/97543719/225635086-977462dc-5953-4a5c-a738-bda248359630.png)
+
+###### Bu da shell escape ya da bash escape denilen bir saldırı yöntemidir. more gibi editörler kendi içlerinde bash komutlarını çalıştırmaya müsade etmekteler. Bu da hak saldırısı örneklerindendi.
+
+##### -Güçlü Parola Yönetimi :
+
+
+
+
+
+
+
+
+
+
+
 
 
 
