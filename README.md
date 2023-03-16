@@ -283,6 +283,27 @@
 
 #### 4) Erişim Denetimi
 
+##### - IP Tables Kullanımı :
+
+###### Bu bölümde güvenlik duvarı yapılandırmayı inceleyeceğiz. Ubuntu diğer sistemlere göre daha kullanıcı dostu olduğundan ötürü, güvenliği 2. plana atmış durumda. Bu yüzden bizim kendimizin bu güvenliği yapılandırması gerekiyor. Sistemimdeki mevcut güvenlik yapılandırmasını görmemin yolu nedir ?
+
+###### sudo iptables -L ve gördüğümüz gibi 3 tane ana kategori var. Bu ip4 versiyonu için geçerli bu kurallar. Eğer sen ip6 için istiyorsan, sudo ip6tables -L komutunu kullanmalısın. clear yapalım bir. Ip4 versiyonu üzerinden çalışalım biraz. Bir senaryo kuralım, bir sunucu kurdum ve bu sunucuda yavaş yavaş sıkılaştırma yapmak istiyorum. Adım adım ilerleyeyim. Düşünüyorum, kaynağı benim sunucum olan bir trafik karşı tarafla bağlantı kurduysa benim bu trafiği engellememmin bir mantığı yok çünkü zaten trafiğin kaynağı benim. Dolayısıyla bu tarz trafiklere müsade eden bir kuralla başlayalım :
+
+![k](https://user-images.githubusercontent.com/97543719/225710159-86f6eb9e-34f3-487c-83f3-a104f76afbf0.PNG)
+
+###### yazdık ve ilk kuralımızı girmiş olduk. iptables -L dediğimizde gördüğümüz gibi listelemeye başladı. Sonra düşünüyorum, bundan sonra başka ne yapabilirim diye. Ayağa kaldırdığım sunucuya ssh ile ulaşmak istedim değil mi? Öyleyse ssh servisi yani 22 numaralı portu açmamda fayda var :
+
+![v](https://user-images.githubusercontent.com/97543719/225710818-2b001851-c5b0-4145-85de-fa3c2c36bf98.PNG)
+
+###### Böylelikle ssh'ı da kabul eden bir protokol tanımlamış olduk. Ardından düşünüyorum, bu sunucu ister istemez adlandırma sunucusuyla da iletişime geçmek isteyecek. Bir ad almak bir isim almak isteyecek. Dolayısıyla DNS sunucusuyla iletişime geçmek isteyecektir. DNS protokolü neydi? 53 numaralı porttan giden UDP hatta aynı zamanda TCP protokolüydü :
+
+![l](https://user-images.githubusercontent.com/97543719/225711686-1b85930f-1c9d-4627-ad5c-43778972e705.PNG)
+
+###### Ama benim en başta düşünmem gereken trafiklerden ya da kurallardan biri aslında sistemin kendi kendine çelme takmaması yani 127.0.0.1 gibi trafikler. Peki bunu nasıl tanımlayabilirim ve buna nasıl müsade edebilirim :
+
+![ö](https://user-images.githubusercontent.com/97543719/225712345-604c290b-2de5-4c1d-8783-916153ce3694.PNG)
+
+
 
 
 
