@@ -244,6 +244,41 @@
 
 ##### - Ecryptfs Sisteminin Kullanımı :
 
+###### Korumalı bir klasör oluşturalım mı? Oluşturacağımız korumalı klasör içerisinde dosyalarımız otomatik olarak şifrelenecek. Lakin önce bir kütüphane indirmemiz gerekecek. sudo apt install ecryptfs-utils :
+
+![azx](https://user-images.githubusercontent.com/97543719/225696562-00acd341-e789-40fe-8263-6e257cb0f561.PNG)
+
+###### sudo mkdir /troll diye bir dosya oluşturalım. sudo mount -t ecryptfs /troll /troll yazıp klasörü kendi üzerinden mount edelim. Gelen seçenekleri tamamladıktan sonra cd /troll diyelim ve ls yapalım. sudo nano çoktroll.txt diyelim ve bir şeyler yazıp çıkalım. caat çoktroll.txt yazıp içeriği görelim :
+
+![puaha](https://user-images.githubusercontent.com/97543719/225698178-f60840e0-f534-4560-b67f-1e5877c6a65f.PNG)
+
+###### sudo mount -t ecryptfs /secret /secret -o key= passphrase, ecryptfs_cipher= aes, ecryptfs_key_bytes=16, ecryptfs_passthrough=no, ecryptfs_enable_filename_crypto= yes yazalım.
+###### Bunları ayarladıktan sonra cd /troll yapıp ls dersek dosyayı görürüz ve cat çoktroll.txt diyerek de içeriğini okuruz.
+
+##### - GPG Uygulamaları :
+
+###### Bu kısımda şifreleme konusunu inceleyeceğiz. Bununla ilgili GPG isimli bir aracı kullanacağız. Hem simetrik hem asimetrik örneklerden bahsedeceğim. Simetrik nedir? Tek bir şifreyi kullanıp onu şifrelemektir. Asimetrik nedir? Ben özel anahtarımla şifrelerken karşı taraf benim açık anahtarımla şifrelemiş olduğum dosyayı açabilecek. Açık anahtar alt yapısında bir özel anahtar vardır bir açık anahtar vardır. Herhangi bir dosyayı şifrelerken özel anahtarımla şifrelerim. Böylelikle karşı taraf benim açık olan anahtarımla bunu açarken bilir ki onu şifreleyen kişi sadece şahsımdır. Dolayısıyla benim imzamla şifrelenmiştir. Kaynağının ben olduğuna yüzde yüz emindir. Aynı şekilde o benim açık anahtarımla herhangi bir şeyi şifrelerse bilir ki onu açabilecek tek kişi benim. Simetrik bir şifreleme yapalım :
+
+![mmmmmmmmmn](https://user-images.githubusercontent.com/97543719/225703078-ba303131-6d9e-4453-9235-49f9dd58e157.PNG)
+
+###### Parola giriyoruz :
+
+![z](https://user-images.githubusercontent.com/97543719/225703300-f931f19c-0594-41f2-a829-f1d8e5c74acb.PNG)
+
+###### ls diyoruz. Ben burada çoktroll.txt görünsün istemiyorum artık :
+
+![x](https://user-images.githubusercontent.com/97543719/225703541-03989e9a-34a7-45e0-9952-fe731e39946a.PNG)
+
+###### shred -u -z çoktroll.txt yapıp ls dediğimizde silindiğini görürüz :
+
+![a](https://user-images.githubusercontent.com/97543719/225704188-965c906c-065d-4c9f-ba48-1e73945fa438.PNG)
+
+
+
+
+
+
+
 
 
 
