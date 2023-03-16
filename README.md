@@ -40,5 +40,6 @@
 
 ###### Bu kişiye parola oluşturmak istersek sudo passwd komutunu kullanırız : 
 
-[alt text](http://url/to/img.png)
+[![Staj](https://user-images.githubusercontent.com/97543719/225608457-cc26636d-31c3-4e57-aed8-a3ce2d80e1a2.png)
+](http://url/to/img.png)
 
