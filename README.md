@@ -25,7 +25,9 @@
 ##### - SSH parolasız erişim yönetimi
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#### -Komut Kullanımı :
+#### 1) Kullanıcı Hesap Yönetimi
+
+##### -Komut Kullanımı :
 
 ###### sudo komutu, komutları yönetici yetkisiyle çalıştırmamıza olanak sağlayan komuttur. Peki neden böyle bir komuta ihtiyaç duyarız? Bütün komutları root olarak yönetmek aslında tehlikelidir. Çünkü farkında olmadan çok güçlü bir komutu çalıştırıp sisteme zarar verebiliriz ya da daha da önemlisi farkında olmadan zararlı bir dosyayı çalıştırıp sistemin saldırgan tarafından ele geçirilmesine sebep olabiliriz. whoami komutunu yazdığımızda defne11 olduğumu söyledi : 
 
