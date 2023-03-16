@@ -90,8 +90,6 @@
 
 ###### Ahmet ALL = (ALL)  ALL yazıp kaydedelim ve çıkalım. Bunu yaptıktan sonra su ahmet yazıp parolasını girip ardından sudo -i dediğimizde artık önümüze engeller çıkmayacak ve root olarak devam edebileceğiz. 
 
-![DMİN](https://user-images.githubusercontent.com/97543719/225621328-ff2ae040-f853-4b2f-92c5-95be868feb03.PNG)
-
 ###### Bazı durumlarda, bir kullanıcının belli başlı komutları çalıştırmasını istiyor olabilirim. Burada kendi ubuntumuzda bir senaryo gerçekleştiriyor olsak da, iş hayatında büyük bir sistemi yönetiyor olabiliriz. Bizim yardımcımız olabilir ve onun sadece mesela disklere ulaşmasını istiyor olabilirim. Senaryomuzda Ahmet benim yardımcm olsun ve onun nelere yetkisinin olduğunu düzenlemek için tekrar sudo visudo yazalım ve en alta gidelim : 
 
 ![stat](https://user-images.githubusercontent.com/97543719/225622881-d30e0594-0896-476d-b48a-0ce90737dcc9.png)
