@@ -27,7 +27,7 @@
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #### 1) Kullanıcı Hesap Yönetimi
 
-##### -Komut Kullanımı :
+##### - Komut Kullanımı :
 
 ###### sudo komutu, komutları yönetici yetkisiyle çalıştırmamıza olanak sağlayan komuttur. Peki neden böyle bir komuta ihtiyaç duyarız? Bütün komutları root olarak yönetmek aslında tehlikelidir. Çünkü farkında olmadan çok güçlü bir komutu çalıştırıp sisteme zarar verebiliriz ya da daha da önemlisi farkında olmadan zararlı bir dosyayı çalıştırıp sistemin saldırgan tarafından ele geçirilmesine sebep olabiliriz. whoami komutunu yazdığımızda defne11 olduğumu söyledi : 
 
@@ -118,7 +118,7 @@
 
 ###### Bu da shell escape ya da bash escape denilen bir saldırı yöntemidir. more gibi editörler kendi içlerinde bash komutlarını çalıştırmaya müsade etmekteler. Bu da hak saldırısı örneklerindendi.
 
-##### -Güçlü Parola Yönetimi :
+##### - Güçlü Parola Yönetimi :
 
 ###### Sıra geldi güçlü parola yönetim politikasına. Bu konuya başlamadan önce bize yardımcı olacak bir paketi indireceğiz. Terminalinize sudo apt install libpam-pwdqudity yazın. Siber güvenlikte almamız gereken en önemli güvenlik önlemi güçlü parola politikasıdır. Bir hacker ya da bir pentester bize saldırmak istediğinde kullanacağı şey sözlük saldırısıdır. Paket indiğine göre :
 
@@ -127,6 +127,21 @@
 ###### sudo gedit /etc/security/pwquality.conf komutunu yazalım. Açıldığında göreceksiniz ki aslında bütün değerler gördüğünüz gibi kapalı durumda. Biz bunları açtıkça etkinleşmiş hale gelecek. Değerleri değiştirip çıkalım.
 
 ![dosya](https://user-images.githubusercontent.com/97543719/225639841-88ed1bee-948a-4624-a30d-9dd5ab2a1f43.png)
+
+###### minlen = 12, minclass = 3 olarak değiştirdim. Uygulamalı olarak görmek için bir kullanıcı üzerinden deneme gerçekleştirelim ama bu sefer yeni bir kullanıcı ekleyelim ve onun üzerinden deneyelim : 
+
+![adjksa](https://user-images.githubusercontent.com/97543719/225641574-ecb4ee3f-1039-41b6-93a2-8607fcbcb077.png)
+
+###### Ayşe için oluşturmuş olduğum 123ayşe şifresini kabul etmedi çünkü 12 haneli şartı koymuştum. Şimdi sağlam bir şifre girelim :
+
+![sssssssssss](https://user-images.githubusercontent.com/97543719/225642318-91cc3229-2752-4d53-9db5-c3003c77ba72.png)
+
+###### Koşulları sağlayan bir parola hazırladığımda bunu kabul etti gördüğümüz gibi. Dolayısıyla herhangi bir sistemi ayağa kaldırmadan önce gerçekten sistemi yönetiyorsak güçlü parola politikası uygulamaktan erinmemeli ve kurumsal bir yaklaşımla uygulama yapmalıyız. Mümkünse kurumumuza ait güvenlik yapılandırma dosyasında bütün bunlar tanımlanmış olmalı. Daha derin güçlendirmeler için  gedit /etc/security/pwquality.conf komutuyla dosyayı açıp orada farklı farklı değişiklikler yapmaya devam edebilirsiniz.
+
+##### - Yeni Hesap Açma :
+
+
+
 
 
 
