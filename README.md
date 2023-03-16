@@ -216,7 +216,33 @@
 
 ###### Sayısal ifadelerini stat -c '%n %a' * komutunu kullanarak görmüş olduk. 
 
+##### - Suid, Guid ve Sticky Bit Kavramları :
 
+###### Herhangi bir dosya açıldığında o anda açılmış kullanıcının yetkileriyle açılır. Ancak bazı özel durumlarda o dosyanın sahibinin yetkisiyle özellikle de root yetkisiyle çalıştırmak isteyebiliriz. Örneğin, ls -l /usr/bin/passwd komutunu inceleyelim. which sudo komutuna bakalım. ls- la /usr/bin/sudo'ya bakalım. ls -l /usr/bin/bsd-write komutuna bakalım :
+
+![qqqqqqqqqqqqqq](https://user-images.githubusercontent.com/97543719/225687116-abd82eaa-da97-4e47-b0ce-e90abe439963.PNG)
+
+###### Gördüğünüz gibi, aslında herhangi bir dosyayı çok güçlü bir yetkiyle kullanılmasını sağlayan bir özellik suid bit. Dolayısıyla bunu manipüle etmek de mümkün olabilir diye düşünebiliriz ki eskiden bu çok kolaymış. Şöyle bir örnek verelim :
+
+![kkkkkkkkkkkkkkk](https://user-images.githubusercontent.com/97543719/225688276-ac235c5a-62b8-4962-8638-2784319d6be7.PNG)
+
+###### sudo nano echo.sh girip id ve cat /etc/shadow yazıp çıkalım. ls -l diyelim. 644 değerinde olduğunu görürüz. Çalıştırma yetkisi verelim : chmod +x echo.sh
+###### ls -l yaptığımızda çalıştığını görürüz. Suid bit eklemek için daha fazla beklemeye gerek var mı?
+
+![iiiiii](https://user-images.githubusercontent.com/97543719/225689193-2d7a7de2-16d8-4fa3-9e9f-e6b269ebf7a3.PNG)
+
+###### İşin özeti Suid Bit'i mecbur olmadıkça hatta hiç kullanmamaya çalışalım. Bu konuda alınabilecek önlemlerden bir tanesi de disk bölümlenmesini ayağa kaldırdığımızda no dev No suid parametrelerini kullanmaktır.
+######  Ayrıca bir de Sticky Bit var. Bazen biz bir klasör ortamında örneğin herkesin ortak şekilde erişim sağlamasını isteyebiliriz. Kendi dosyalarını yaratıp üzerinde değişiklik yapmalarını isteyebiliriz. Ama oturum açan başka bir kullanıcının o klasör içindeki o dosyayı silmesşnş istemeyiz. İşte burada Sticky Bit dediğimiz kavram ortaya çıkıyor. Bunun en güzel örneği ise tmp klasörü. ls -ld /tmp dediğimizde :
+
+![hhhhhhhhhhhhhh](https://user-images.githubusercontent.com/97543719/225691189-f1e36f6e-8d51-4189-90c9-d93c3bdc559c.PNG)
+
+###### burada herhangi bir kullanıcı dosya yaratabilir değişiklik yapabilir ama oturum açan başka bir kullanıcı, diğer kullanıcının yarattığı dosyayı silip değiştirme yetkisine sahip değildir. en sondaki t harfi de bunun Sticky Bit ile tanımlandığını ve biraz önceki özelliklere sahip olduğunu gösteriyor.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#### 3) Şifreleme İşlemleri
+
+##### - Ecryptfs Sisteminin Kullanımı :
 
 
 
