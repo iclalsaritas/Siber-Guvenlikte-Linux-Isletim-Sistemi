@@ -337,7 +337,7 @@
 ###### ssh troll@ipsi yazıp girdiğimizde troll hesabına erişmiş olduk. ssh servisini ayağa kaldrmak ve düzgün yönetmekbizim sistem yöneticiliği alanında hem elimiz ayağımız olacaktır ama aynı zamanda bunun güvenliği ve sıkılaştırmasına önem vermek gereklidir.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+###### | İçeriğimde kullandığım isimler ve takma adlar afetzede çocukların isimmleridir. Bu kısım hakkında soru geldiği için belirtmek istedim |
 
 
 
